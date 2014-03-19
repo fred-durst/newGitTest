@@ -1,11 +1,20 @@
-<!DOCTYPE html>
-<html>
+var Instagram = {};
+(function() {
 
-<body>
-<ul>
-	<li>Bracks</li>
-	<li>Cosmic Sand</li>
-	<li>Wind</li>
-</ul>
-</body>
-</html>
+	function toScreen(photos){
+    $.each(photos.data, function(index, photo){
+    photo = "<img src='"+ photo.images.low_resolution.url + "' />";
+    $('div#photos-wrap').append(photo);
+  });
+}
+
+	function search(tag) {
+		 var url = "https://api.instagram.com/v1/tags/" 
+		 + tag + "/media/recent?callback=?&client_id=a307c0d0dada4b77b974766d71b72e0e"
+  		 $.getJSON(url, toScreen);
+	}
+
+	Instagram.search = search;
+})();
+
+Instagram.search('кошки');
