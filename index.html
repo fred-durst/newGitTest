@@ -1,14 +1,7 @@
-.error {
-	background: #ffd9d9;
-    border-color:#d3adad;
-}
-
-.hiden {
-	visibility:hidden;
-}
-
-
-.visible {
-	visibility:visible !important;
-	color:red;
-}
+<div class="form-group">
+    <label class="col-md-4 control-label" for="name">Full Name</label>
+    <div class="col-md-8">
+        <input id="name" class="form-control" type="text" name="name" placeholder="Full Name" value="{{user.name}}" />
+        <span class="hiden" id="nameErrorMessage">&nbsp;Enter your name!</span>
+    </div>
+</div>
